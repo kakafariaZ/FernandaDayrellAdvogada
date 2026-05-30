@@ -1,17 +1,22 @@
 {
-  "name": "fernandadayrelladvogada",
+  "name": "fernanda-dayrell-advogada",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://kakafariaZ.github.io/FernandaDayrellAdvogada",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-dom": "^19.2.6",
+    "save-dev": "^0.0.1-security"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
