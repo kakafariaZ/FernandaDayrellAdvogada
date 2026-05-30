@@ -54,8 +54,7 @@ function App() {
             </div>
 
             <h1 className="hero-heading">
-              {/* CORRIGIDO: Agora aponta dinamicamente para a pasta do repositório remoto */}
-              <img src={`${baseUrl}logogoldalt.svg`} alt="Fernanda Dayrell Advogada" width={300} />  
+              <img src="/FernandaDayrellAdvogada/logogoldalt.svg" alt="Fernanda Dayrell Advogada" width={300} />  
             </h1>
             <p className="hero-sub">Manual de Identidade Visual</p>
             <p className="hero-desc">
@@ -143,7 +142,7 @@ function App() {
               <div className="dl-card-footer">
                 {/* CORRIGIDO: Arquivos da pasta public devem perder o prefixo 'public/' no link final */}
                 <a
-                  href={`${baseUrl}MANUAL_DE_IDENTIDADE_VISUAL.pdf`}
+                  href="/FernandaDayrellAdvogada/MANUAL_DE_IDENTIDADE_VISUAL.pdf"
                   download
                   className="dl-btn dl-btn-navy"
                 >
@@ -168,7 +167,7 @@ function App() {
               <div className="dl-card-footer">
                 {/* CORRIGIDO: Removido o prefixo 'public/' e injetado o baseUrl */}
                 <a
-                  href={`${baseUrl}RELATORIO_DE_CRIACAO_DE_MARCA.pdf`}
+                  href="/FernandaDayrellAdvogada/RELATORIO_DE_CRIACAO_DE_MARCA.pdf"
                   download
                   className="dl-btn dl-btn-wine"
                 >
@@ -302,7 +301,7 @@ function App() {
             <div className="type-showcase">
               <div className="type-row">
                 {/* CORRIGIDO: Injetado o baseUrl para corrigir a quebra do nome.svg */}
-                <img src={`${baseUrl}nome.svg`} alt="Fernanda Dayrell Advogada" width={300} />
+                <img src="/FernandaDayrellAdvogada/nome.svg" alt="Fernanda Dayrell Advogada" width={300} />
                 <span className="type-spec">Relicta · 44px · Light 300 · Display</span>
               </div>
               <div className="type-row">
