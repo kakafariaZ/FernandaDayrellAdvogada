@@ -1,5 +1,10 @@
 import './App.css';
 
+// ─── IMPORTAÇÃO NATIVA DAS IMAGENS (VITE) ───
+// O compilador vai processar esses arquivos e gerar caminhos válidos no deploy automaticamente
+import logoGoldAlt from './assets/logogoldalt.svg';
+import nomeLogo from './assets/nome.svg';
+
 // ─── SVG ÍCONES ───
 const IconPDF = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -36,7 +41,6 @@ const IconDown = () => (
 
 // ─── APP ───
 function App() {
-  // Essa constante captura automaticamente o caminho correto gerado pelo seu base no vite.config.ts
   const baseUrl = import.meta.env.BASE_URL;
 
   return (
@@ -54,7 +58,8 @@ function App() {
             </div>
 
             <h1 className="hero-heading">
-              <img src="/FernandaDayrellAdvogada/logogoldalt.svg" alt="Fernanda Dayrell Advogada" width={300} />  
+              {/* CORRIGIDO: Passando a variável importada nativamente pelo Vite */}
+              <img src={logoGoldAlt} alt="Fernanda Dayrell Advogada" width={300} />  
             </h1>
             <p className="hero-sub">Manual de Identidade Visual</p>
             <p className="hero-desc">
@@ -140,9 +145,8 @@ function App() {
                 </p>
               </div>
               <div className="dl-card-footer">
-                {/* CORRIGIDO: Arquivos da pasta public devem perder o prefixo 'public/' no link final */}
                 <a
-                  href="/FernandaDayrellAdvogada/MANUAL_DE_IDENTIDADE_VISUAL.pdf"
+                  href={`${baseUrl}MANUAL_DE_IDENTIDADE_VISUAL.pdf`}
                   download
                   className="dl-btn dl-btn-navy"
                 >
@@ -165,9 +169,8 @@ function App() {
                 </p>
               </div>
               <div className="dl-card-footer">
-                {/* CORRIGIDO: Removido o prefixo 'public/' e injetado o baseUrl */}
                 <a
-                  href="/FernandaDayrellAdvogada/RELATORIO_DE_CRIACAO_DE_MARCA.pdf"
+                  href={`${baseUrl}RELATORIO_DE_CRIACAO_DE_MARCA.pdf`}
                   download
                   className="dl-btn dl-btn-wine"
                 >
@@ -218,7 +221,6 @@ function App() {
           {/* ── PALETA DE CORES ── */}
           <div className="ds-block">
             <div className="ds-block-label">Paleta de Cores</div>
-            {/* O restante do bloco de cores permanece idêntico ao seu original */}
             <div className="palette-group-title" style={{ color: 'var(--gold-700)' }}>Primária</div>
             <div className="palette-row">
               {[
@@ -300,8 +302,8 @@ function App() {
             <div className="ds-block-label">Tipografia</div>
             <div className="type-showcase">
               <div className="type-row">
-                {/* CORRIGIDO: Injetado o baseUrl para corrigir a quebra do nome.svg */}
-                <img src="/FernandaDayrellAdvogada/nome.svg" alt="Fernanda Dayrell Advogada" width={300} />
+                {/* CORRIGIDO: Passando a variável importada nativamente pelo Vite */}
+                <img src={nomeLogo} alt="Fernanda Dayrell Advogada" width={300} />
                 <span className="type-spec">Relicta · 44px · Light 300 · Display</span>
               </div>
               <div className="type-row">
@@ -429,7 +431,7 @@ function App() {
               Enquanto a advocacia tradicional costuma focar apenas no litígio, a marca Fernanda Dayrell atua para prevenir, acolher e empoderar.
             </p>
             <p className="manifesto-text">
-              Nossa missão é transformar a complexidade jurídica em soluções reais. Por meio da escuta ativa, focamos em resolver o problema na raiz, com uma visão criteriosa e humana.
+              Nossa missão é transformar a complexidade jurídica em soluções reais. Por meio da escuta ativa, focamos em resolver o problem na raiz, com uma visão criteriosa e humana.
             </p>
           </div>
 
@@ -472,7 +474,6 @@ function App() {
             <span className="footer-sub">Advogada · Design System v1.0</span>
           </div>
           <div style={{ display: 'flex', gap: 12 }}>
-            {/* CORRIGIDO: Caminhos atualizados também nos botões do rodapé */}
             <a href={`${baseUrl}MANUAL_DE_IDENTIDADE_VISUAL.pdf`} download className="dl-btn dl-btn-navy" style={{ padding: '10px 18px', fontSize: 10 }}>
               <IconDown /> Manual
             </a>
