@@ -36,6 +36,9 @@ const IconDown = () => (
 
 // ─── APP ───
 function App() {
+  // Essa constante captura automaticamente o caminho correto gerado pelo seu base no vite.config.ts
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <>
       {/* ══════════════════════════════════════
@@ -51,12 +54,13 @@ function App() {
             </div>
 
             <h1 className="hero-heading">
-              <img src="/logogoldalt.svg" alt="Fernanda Dayrell Advogada" width={300} />  
+              {/* CORRIGIDO: Agora aponta dinamicamente para a pasta do repositório remoto */}
+              <img src={`${baseUrl}logogoldalt.svg`} alt="Fernanda Dayrell Advogada" width={300} />  
             </h1>
             <p className="hero-sub">Manual de Identidade Visual</p>
             <p className="hero-desc">
               Documentação completa da identidade da marca — paleta, tipografia,
-              componentes, manifesto e arquivos para downlo sad.
+              componentes, manifesto e arquivos para download.
             </p>
 
             <div className="hero-meta">
@@ -137,8 +141,9 @@ function App() {
                 </p>
               </div>
               <div className="dl-card-footer">
+                {/* CORRIGIDO: Arquivos da pasta public devem perder o prefixo 'public/' no link final */}
                 <a
-                  href="public/MANUAL_DE_IDENTIDADE_VISUAL.pdf"
+                  href={`${baseUrl}MANUAL_DE_IDENTIDADE_VISUAL.pdf`}
                   download
                   className="dl-btn dl-btn-navy"
                 >
@@ -161,8 +166,9 @@ function App() {
                 </p>
               </div>
               <div className="dl-card-footer">
+                {/* CORRIGIDO: Removido o prefixo 'public/' e injetado o baseUrl */}
                 <a
-                  href="public/RELATORIO_DE_CRIACAO_DE_MARCA.pdf"
+                  href={`${baseUrl}RELATORIO_DE_CRIACAO_DE_MARCA.pdf`}
                   download
                   className="dl-btn dl-btn-wine"
                 >
@@ -210,10 +216,10 @@ function App() {
             <p>Documentação visual de todos os componentes e tokens utilizados na construção da marca.</p>
           </div>
 
-          {/* ── PALETA PRIMÁRIA ── */}
+          {/* ── PALETA DE CORES ── */}
           <div className="ds-block">
             <div className="ds-block-label">Paleta de Cores</div>
-
+            {/* O restante do bloco de cores permanece idêntico ao seu original */}
             <div className="palette-group-title" style={{ color: 'var(--gold-700)' }}>Primária</div>
             <div className="palette-row">
               {[
@@ -295,7 +301,8 @@ function App() {
             <div className="ds-block-label">Tipografia</div>
             <div className="type-showcase">
               <div className="type-row">
-                  <img src="/nome.svg" alt="Fernanda Dayrell Advogada" width={300} />
+                {/* CORRIGIDO: Injetado o baseUrl para corrigir a quebra do nome.svg */}
+                <img src={`${baseUrl}nome.svg`} alt="Fernanda Dayrell Advogada" width={300} />
                 <span className="type-spec">Relicta · 44px · Light 300 · Display</span>
               </div>
               <div className="type-row">
@@ -335,7 +342,6 @@ function App() {
           <div className="ds-block">
             <div className="ds-block-label">Componentes</div>
             <div className="comp-grid">
-              {/* Botões */}
               <div className="comp-card">
                 <span className="comp-card-title">Botões</span>
                 <div className="btn-stack">
@@ -346,7 +352,6 @@ function App() {
                 </div>
               </div>
 
-              {/* Badges + Inputs */}
               <div className="comp-card">
                 <span className="comp-card-title">Badges & Tags</span>
                 <div className="badge-wrap" style={{ marginBottom: 24 }}>
@@ -364,7 +369,6 @@ function App() {
                 <input className="ds-input" type="email" placeholder="email@exemplo.com" />
               </div>
 
-              {/* Card serviço */}
               <div className="comp-card" style={{ padding: 0, overflow: 'hidden' }}>
                 <span className="comp-card-title" style={{ padding: '20px 20px 0', display: 'block' }}>Card de serviço</span>
                 <div style={{ padding: '0 16px 16px' }}>
@@ -469,13 +473,14 @@ function App() {
             <span className="footer-sub">Advogada · Design System v1.0</span>
           </div>
           <div style={{ display: 'flex', gap: 12 }}>
-            <a href="/MANUAL_DE_IDENTIDADE_VISUAL.pdf" download className="dl-btn dl-btn-navy" style={{ padding: '10px 18px', fontSize: 10 }}>
+            {/* CORRIGIDO: Caminhos atualizados também nos botões do rodapé */}
+            <a href={`${baseUrl}MANUAL_DE_IDENTIDADE_VISUAL.pdf`} download className="dl-btn dl-btn-navy" style={{ padding: '10px 18px', fontSize: 10 }}>
               <IconDown /> Manual
             </a>
-            <a href="/RELATORIO_CRIACAO_MARCA.pdf" download className="dl-btn dl-btn-wine" style={{ padding: '10px 18px', fontSize: 10 }}>
+            <a href={`${baseUrl}RELATORIO_DE_CRIACAO_DE_MARCA.pdf`} download className="dl-btn dl-btn-wine" style={{ padding: '10px 18px', fontSize: 10 }}>
               <IconDown /> Relatório
             </a>
-            <a href="https://drive.google.com/LINK_DO_DRIVE" target="_blank" rel="noopener noreferrer" className="dl-btn dl-btn-gold" style={{ padding: '10px 18px', fontSize: 10 }}>
+            <a href="https://drive.google.com/drive/folders/1DjEGGxw33yqy4b8QBrW_1uVome4ovi8B" target="_blank" rel="noopener noreferrer" className="dl-btn dl-btn-gold" style={{ padding: '10px 18px', fontSize: 10 }}>
               <IconArrow /> Drive
             </a>
           </div>
