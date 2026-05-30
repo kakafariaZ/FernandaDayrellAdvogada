@@ -1,0 +1,35 @@
+.input-group {
+  margin-bottom: 12px;
+}
+
+.ds-input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  border: 1px solid var(--navy);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ds-input:focus {
+  border-color: var(--gold);
+}
+
+.ds-input::placeholder {
+  color: var(--text-muted);
+}
+
+.ds-label-input {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 6px;
+}

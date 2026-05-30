@@ -1,0 +1,71 @@
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+}
+.btn-primary:hover { background: var(--navy-800); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--navy);
+}
+.btn-secondary:hover { background: rgba(30,48,87,0.05); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--wine);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--wine);
+}
+.btn-ghost:hover { background: rgba(139,32,53,0.05); }
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+}
+.btn-gold:hover { background: var(--gold-800); }
+
+.btn-white {
+  background: var(--white);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+}
+.btn-white:hover { background: var(--cream); }
