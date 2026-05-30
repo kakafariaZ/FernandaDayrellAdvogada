@@ -162,7 +162,7 @@ function App() {
               </div>
               <div className="dl-card-footer">
                 <a
-                  href="public/RELATORIO_DE_CRIACAO.pdf"
+                  href="public/RELATORIO_DE_CRIACAO_DE_MARCA.pdf"
                   download
                   className="dl-btn dl-btn-wine"
                 >
