@@ -5,12 +5,12 @@
   "type": "module",
   "homepage": "https://kakafariaz.github.io/FernandaDayrellAdvogada/",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "main -d dist"
+  "dev": "vite",
+  "build": "tsc && vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.2.6",
